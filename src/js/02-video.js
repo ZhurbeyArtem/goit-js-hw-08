@@ -10,7 +10,7 @@ const updateLocalStorage = throttle((currentTime) => {
 }, 1000);
 
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'))
+player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0)
     
 player.on('timeupdate', function (e) {
     updateLocalStorage(e.seconds)

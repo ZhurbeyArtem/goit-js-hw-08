@@ -22,7 +22,7 @@ else {
   setStore()
 }
 
-const updateLocalStorage = throttle((e) => {
+const handleChange = throttle((e) => {
   const data = localStorage.getItem('feedback-form-state')
   const { email, message } = JSON.parse(data)
 
@@ -34,7 +34,7 @@ const updateLocalStorage = throttle((e) => {
   localStorage.setItem("feedback-form-state", JSON.stringify(feedbackFormState));
 }, 500);
 
-const clearStorage = (e) => {
+const handleSubmit = (e) => {
   e.preventDefault()
 
   console.log('before clean');
@@ -52,5 +52,5 @@ const clearStorage = (e) => {
 
 
 
-form.addEventListener('input', (e) => updateLocalStorage(e.target))
-form.addEventListener('submit', clearStorage)
+form.addEventListener('input', (e) => handleChange(e.target))
+form.addEventListener('submit', handleSubmit)
