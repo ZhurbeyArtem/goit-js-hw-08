@@ -38,16 +38,20 @@ const handleSubmit = (e) => {
   e.preventDefault()
 
   console.log('before clean');
-  console.log("email ", emailInput.value,)
-  console.log("message ", messageTextarea.value,)
+  console.log({
+    email: emailInput.value,
+    message: messageTextarea.value
+  });
 
   localStorage.removeItem('feedback-form-state')
   emailInput.value = '';
   messageTextarea.value = '';
 
   console.log('after clean');
-  console.log("email ", emailInput.value,)
-  console.log("message ", messageTextarea.value,)
+  console.log({
+    email: emailInput.value,
+    message: messageTextarea.value,
+  });
 }
 
 
